@@ -15,6 +15,7 @@ import { RequestCreateComponent } from './feature/request/request-create/request
 import { RequestDetailComponent } from './feature/request/request-detail/request-detail.component';
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { RequestListComponent } from './feature/request/request-list/request-list.component';
+import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RequestListComponent } from './feature/request/request-list/request-lis
     RequestCreateComponent,
     RequestDetailComponent,
     RequestEditComponent,
-    RequestListComponent
+    RequestListComponent,
+    RequestLinesComponent
   ],
   imports: [
     BrowserModule,
