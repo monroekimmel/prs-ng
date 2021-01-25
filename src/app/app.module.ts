@@ -19,6 +19,8 @@ import { RequestLinesComponent } from './feature/request/request-lines/request-l
 import { RequestReviewComponent } from './feature/request/request-review/request-review.component';
 import { ReviewApproveComponent } from './feature/request/review-approve/review-approve.component';
 import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
+import { MenuComponent } from './core/menu/menu.component';
+import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { RequestApproveComponent } from './feature/request/request-approve/reque
     RequestLinesComponent,
     RequestReviewComponent,
     ReviewApproveComponent,
-    RequestApproveComponent
+    RequestApproveComponent,
+    MenuComponent,
+    NoComponentDefinedComponent
   ],
   imports: [
     BrowserModule,
