@@ -21,6 +21,8 @@ import { ReviewApproveComponent } from './feature/request/review-approve/review-
 import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined.component';
+import { ProductListComponent } from './feature/product/product-list/product-list.component';
+import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { NoComponentDefinedComponent } from './core/no-component-defined/no-comp
     ReviewApproveComponent,
     RequestApproveComponent,
     MenuComponent,
-    NoComponentDefinedComponent
+    NoComponentDefinedComponent,
+    ProductListComponent,
+    ProductCreateComponent
   ],
   imports: [
     BrowserModule,
