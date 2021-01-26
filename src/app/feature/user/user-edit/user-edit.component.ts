@@ -20,12 +20,10 @@ export class UserEditComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // get the id from the url
     this.route.params.subscribe(
       parms => {
         this.userId = parms['id'];
       });
-      // get user id
       this.userSvc.getById(this.userId).subscribe(
         resp => {
           this.user = resp as User;
@@ -37,11 +35,9 @@ export class UserEditComponent implements OnInit {
   }
 
   save() {
-    // save the user to the database
     this.userSvc.update(this.user).subscribe(
       resp => {
         this.user = resp as User;
-        // forward to the user list component
         this.router.navigateByUrl("/user-list");
       },
       err => {

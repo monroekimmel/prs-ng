@@ -28,13 +28,13 @@ export class RequestApproveComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // get the id from the url
+   
     this.route.params.subscribe(
       parms => {
         this.requestId = parms['id'];
       });
 
-    // get the request by the request id
+   
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
         this.request = resp as Request;
@@ -44,7 +44,7 @@ export class RequestApproveComponent implements OnInit {
       }
     )
 
-    // get the line items by request id
+    
     this.lineItemSvc.getLineItemsByRequestId(this.requestId).subscribe(
       resp => {
         this.lineItems = resp as LineItem[];
@@ -55,23 +55,21 @@ export class RequestApproveComponent implements OnInit {
     )
   }
 
-  // Approve a request
+
   approve() {
     this.requestSvc.approve(this.request).subscribe(
       resp => {
         this.request = resp as Request;
-        // forward to request review
         this.router.navigateByUrl("/request-review/"+this.sysSvc.loggedInUser.id)
       }
     )
   }
 
-  // Reject a request
+
   reject() {
     this.requestSvc.reject(this.request).subscribe(
       resp => {
         this.request = resp as Request;
-        // forward to request review
         this.router.navigateByUrl("/request-review/"+this.sysSvc.loggedInUser.id)
       }
     )

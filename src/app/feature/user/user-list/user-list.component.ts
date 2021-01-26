@@ -16,7 +16,6 @@ export class UserListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    //populate list of users
     this.userSvc.getAll().subscribe(
       resp => {
         this.users = resp as User[];

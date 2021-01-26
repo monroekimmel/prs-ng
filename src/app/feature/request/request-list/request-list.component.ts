@@ -16,7 +16,6 @@ export class RequestListComponent implements OnInit {
               private sysSvc: SystemService) { }
 
   ngOnInit(): void {
-    // populate list of requests
     this.requestSvc.getAll().subscribe(
       resp => {
         this.requests = resp as Request[];

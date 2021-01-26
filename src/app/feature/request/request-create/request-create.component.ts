@@ -22,12 +22,10 @@ export class RequestCreateComponent implements OnInit {
 
   save() {
     this.request.user = this.sysSvc.loggedInUser;
-    // save the request to the DB
     this.requestSvc.create(this.request).subscribe(
       resp => {
         this.request = resp as Request;
         console.log("Request created", this.request);
-        // forward to the request list component
         this.router.navigateByUrl("/request-list");
       },
       err => {

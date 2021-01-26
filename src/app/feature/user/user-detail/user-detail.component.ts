@@ -19,12 +19,10 @@ export class UserDetailComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // get the id from the url
     this.route.params.subscribe(
       parms => {
         this.userId = parms['id'];
       });
-    // get user by id
     this.userSvc.getById(this.userId).subscribe(
       resp => {
         this.user = resp as User;
@@ -36,11 +34,9 @@ export class UserDetailComponent implements OnInit {
   }
 
   delete() {
-    // delete the user from the database
     this.userSvc.delete(this.user.id).subscribe(
       resp => {
         this.user = resp as User;
-        // forward to the user list component
         this.router.navigateByUrl("/user-list");
       },
       err => {

@@ -22,12 +22,8 @@ export class RequestEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.request.user = this.sysSvc.loggedInUser;
-
-    // get id from url
     this.route.params.subscribe(
       parms => { this.requestId = parms['id']; });
-
-    // get the request id
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
         this.request = resp as Request;
@@ -39,11 +35,9 @@ export class RequestEditComponent implements OnInit {
   }
 
   save() {
-    // save the request to the DB
     this.requestSvc.update(this.request).subscribe(
       resp => {
         this.request = resp as Request;
-        // forward to the request list component
         this.router.navigateByUrl("/request-list");
       },
       err => {
