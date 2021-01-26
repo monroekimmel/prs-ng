@@ -23,6 +23,8 @@ import { MenuComponent } from './core/menu/menu.component';
 import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined.component';
 import { ProductListComponent } from './feature/product/product-list/product-list.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
+import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
+import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { ProductCreateComponent } from './feature/product/product-create/product
     MenuComponent,
     NoComponentDefinedComponent,
     ProductListComponent,
-    ProductCreateComponent
+    ProductCreateComponent,
+    ProductEditComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
