@@ -17,6 +17,7 @@ export class ProductCreateComponent implements OnInit {
   submitBtnTitle = "Create";
   product: Product = new Product();
   vendors: Vendor[] = [];
+  
 
   constructor(private productSvc: ProductService,
               private vendorSvc: VendorService,
