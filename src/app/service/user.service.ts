@@ -1,38 +1,43 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../model/user.class';
 
-const URL = "http://localhost:8080/users";
-
+const URL = 'http://localhost:8080/users';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getAll() : Observable<User[]> {
-    return this.http.get(URL+'/') as Observable<User[]>;
+  //service functions
+  // getAll users
+  getAll(): Observable<User[]> {
+    return this.http.get(URL + '/') as Observable<User[]>;
   }
 
-  getById(id) : Observable<User> {
-    return this.http.get(URL+'/'+id) as Observable<User>;
+  // get user by ID
+  getById(id): Observable<User> {
+    return this.http.get(URL + '/' + id) as Observable<User>;
   }
 
-  create(user: User) : Observable<User> {
-    return this.http.post(URL+'/', user) as Observable<User>;
+  // create user
+  create(user: User): Observable<User> {
+    return this.http.post(URL + '/', user) as Observable<User>;
   }
 
-  update(user: User) : Observable<User> {
-    return this.http.put(URL+'/', user) as Observable<User>;
+  // update user
+  update(user: User): Observable<User> {
+    return this.http.put(URL + '/', user) as Observable<User>;
   }
 
-  delete(id) : Observable<User> {
-    return this.http.delete(URL+'/'+id) as Observable<User>;
+  // delete user
+  delete(id): Observable<User> {
+    return this.http.delete(URL + '/' + id) as Observable<User>;
   }
 
-  login(user: User) : Observable<User> {
-    return this.http.post(URL+'/login', user) as Observable<User>;
+  // login
+  login(user: User): Observable<User> {
+    return this.http.post(URL + '/login', user) as Observable<User>;
   }
 }

@@ -20,8 +20,8 @@ import { RequestEditComponent } from './feature/request/request-edit/request-edi
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 import { RequestReviewComponent } from './feature/request/request-review/request-review.component';
 import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
-import { LineItemCreateComponent } from './feature/lineItem/line-item-create/line-item-create.component';
-import { LineItemEditComponent } from './feature/lineItem/line-item-edit/line-item-edit.component';
+import { LineItemCreateComponent } from './feature/lineItem/lineitem-create/line-item-create.component';
+import { LineItemEditComponent } from './feature/lineItem/lineitem-edit/line-item-edit.component';
 import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined.component';
 
 const routes: Routes = [
@@ -46,8 +46,8 @@ const routes: Routes = [
   { path: "request-lines/:id", component: RequestLinesComponent},
   { path: "request-review/:id", component: RequestReviewComponent},
   { path: "request-approve/:id", component: RequestApproveComponent},
-  { path: "line-item-create/:id", component: LineItemCreateComponent},
-  { path: "line-item-edit/:id", component: LineItemEditComponent},
+  { path: "lineitem-create/:id", component: LineItemCreateComponent},
+  { path: "lineitem-edit/:id", component: LineItemEditComponent},
   { path: "**", component: NoComponentDefinedComponent}
 ];
 

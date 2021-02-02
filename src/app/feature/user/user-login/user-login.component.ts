@@ -10,7 +10,7 @@ import { UserService } from 'src/app/service/user.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
-  title: string = 'Login';
+  title: string = 'Welcome to PRS!';
   message: string = "";
   user: User = new User();
 
@@ -29,7 +29,7 @@ export class UserLoginComponent implements OnInit {
         } else {
           this.user = resp as User;
           this.sysSvc.loggedInUser = this.user;
-          this.router.navigateByUrl("/user-list");
+          this.router.navigateByUrl("/home");
         }
       },
       err => {

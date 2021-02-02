@@ -24,8 +24,8 @@ import { RequestCreateComponent } from './feature/request/request-create/request
 import { RequestEditComponent } from './feature/request/request-edit/request-edit.component';
 import { NoComponentDefinedComponent } from './core/no-component-defined/no-component-defined.component';
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
-import { LineItemCreateComponent } from './feature/lineItem/line-item-create/line-item-create.component';
-import { LineItemEditComponent } from './feature/lineItem/line-item-edit/line-item-edit.component';
+import { LineItemCreateComponent } from './feature/lineItem/lineitem-create/line-item-create.component';
+import { LineItemEditComponent } from './feature/lineItem/lineitem-edit/line-item-edit.component';
 import { RequestReviewComponent } from './feature/request/request-review/request-review.component';
 import { RequestApproveComponent } from './feature/request/request-approve/request-approve.component';
 
@@ -55,7 +55,7 @@ import { RequestApproveComponent } from './feature/request/request-approve/reque
     LineItemCreateComponent,
     LineItemEditComponent,
     RequestReviewComponent,
-    RequestApproveComponent
+    RequestApproveComponent,
   ],
   imports: [
     BrowserModule,
