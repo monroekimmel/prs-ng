@@ -32,6 +32,7 @@ export class UserLoginComponent implements OnInit {
           this.router.navigateByUrl("/home");
         }
       },
+      
       err => {
         console.log("User login error.", err);
         this.message = "Error during login";
