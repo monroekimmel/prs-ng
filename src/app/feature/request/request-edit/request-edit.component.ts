@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Request } from 'src/app/model/request.class';
 import { RequestService } from 'src/app/service/request.service';
@@ -18,12 +19,17 @@ export class RequestEditComponent implements OnInit {
   constructor(private requestSvc: RequestService,
               private sysSvc: SystemService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private loc: Location) { }
 
   ngOnInit(): void {
+    this.sysSvc.checkLogin();
+        
     this.request.user = this.sysSvc.loggedInUser;
+
     this.route.params.subscribe(
       parms => { this.requestId = parms['id']; });
+
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
         this.request = resp as Request;
@@ -44,6 +50,10 @@ export class RequestEditComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  backClicked() {
+    this.loc.back();
   }
 
 }

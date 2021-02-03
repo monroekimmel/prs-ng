@@ -4,6 +4,7 @@ import { LineItem } from 'src/app/model/line-item.class';
 import { LineItemService } from '../../../service/line-item.service';
 import { Request } from 'src/app/model/request.class';
 import { RequestService } from 'src/app/service/request.service';
+import { SystemService } from 'src/app/service/system.service';
 
 @Component({
   selector: 'app-request-lines',
@@ -11,8 +12,8 @@ import { RequestService } from 'src/app/service/request.service';
   styleUrls: ['./request-lines.component.css']
 })
 export class RequestLinesComponent implements OnInit {
-  requestTitle = "PurchaseRequest Line Items";
-  linesTitle = "Lines";
+  requestTitle = "PurchaseRequest Detail";
+  linesTitle = "Line Items";
   request: Request = null;
   lineItems: LineItem[] = [];
   lineItem: LineItem = new LineItem();
@@ -22,10 +23,13 @@ export class RequestLinesComponent implements OnInit {
 
   constructor(private lineItemSvc: LineItemService,
               private requestSvc: RequestService,
+              private sysSvc: SystemService,
               private router: Router,
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.sysSvc.checkLogin();
+
     this.route.params.subscribe(
       parms => {
         this.requestId = parms['id'];

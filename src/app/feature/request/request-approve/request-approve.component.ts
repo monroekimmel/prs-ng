@@ -13,7 +13,7 @@ import { SystemService } from 'src/app/service/system.service';
 })
 export class RequestApproveComponent implements OnInit {
   requestTitle = "PurchaseRequest Approve/Reject";
-  linesTitle = "Lines";
+  linesTitle = "Line Items";
   approveBtn = "Approve";
   rejectBtn = "Reject";
   request: Request = null;
@@ -28,13 +28,13 @@ export class RequestApproveComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-   
+    this.sysSvc.checkLogin();
+
     this.route.params.subscribe(
       parms => {
         this.requestId = parms['id'];
       });
 
-   
     this.requestSvc.getById(this.requestId).subscribe(
       resp => {
         this.request = resp as Request;
@@ -44,7 +44,6 @@ export class RequestApproveComponent implements OnInit {
       }
     )
 
-    
     this.lineItemSvc.getLineItemsByRequestId(this.requestId).subscribe(
       resp => {
         this.lineItems = resp as LineItem[];
@@ -55,7 +54,6 @@ export class RequestApproveComponent implements OnInit {
     )
   }
 
-
   approve() {
     this.requestSvc.approve(this.request).subscribe(
       resp => {
@@ -64,7 +62,6 @@ export class RequestApproveComponent implements OnInit {
       }
     )
   }
-
 
   reject() {
     this.requestSvc.reject(this.request).subscribe(
