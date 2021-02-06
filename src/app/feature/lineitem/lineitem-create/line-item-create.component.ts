@@ -57,7 +57,7 @@ export class LineItemCreateComponent implements OnInit {
 
   save() {
     this.lineItem.request = this.request;
-    
+    console.log("Create line item:",this.lineItem)
     this.lineItemSvc.create(this.lineItem).subscribe(
       resp => {
         this.lineItem = resp as LineItem;
