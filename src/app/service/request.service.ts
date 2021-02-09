@@ -5,6 +5,7 @@ import { Request } from '../model/request.class';
 
 const URL = "http://localhost:8080/requests";
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -44,6 +45,7 @@ export class RequestService {
     return this.http.put(URL+'/approve', request) as Observable<Request>;
   }
 
+  
   reject(request: Request) : Observable<Request> {
     return this.http.put(URL+'/reject', request) as Observable<Request>;
   }
