@@ -58,7 +58,7 @@ export class RequestApproveComponent implements OnInit {
     this.requestSvc.approve(this.request).subscribe(
       resp => {
         this.request = resp as Request;
-        this.router.navigateByUrl("/request-review"+this.sysSvc.loggedInUser.id)
+        this.router.navigateByUrl("/request-review");
       }
     )
   }
@@ -67,7 +67,7 @@ export class RequestApproveComponent implements OnInit {
     this.requestSvc.reject(this.request).subscribe(
       resp => {
         this.request = resp as Request;
-        this.router.navigateByUrl("/request-review"+this.sysSvc.loggedInUser.id)
+        this.router.navigateByUrl("/request-review");
       }
     )
   }
