@@ -63,6 +63,7 @@ export class RequestApproveComponent implements OnInit {
     )
   }
 
+  
   reject() {
     this.requestSvc.reject(this.request).subscribe(
       resp => {
